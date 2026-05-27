@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>安速 - 业务运单</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">A</div>
+          <div>
+            <strong>ANSU</strong>
+            <span>安速货运</span>
+          </div>
+        </div>
+
+        <nav class="side-nav" aria-label="主导航">
+          <button class="nav-item"><span class="nav-icon">⌘</span>预报下单</button>
+          <button class="nav-item"><span class="nav-icon">⌘</span>未入仓运单</button>
+          <button class="nav-item nav-group active">
+            <span class="nav-icon">⌘</span>业务运单
+            <span class="chevron">⌃</span>
+          </button>
+          <button class="nav-item child active-child"><span class="nav-icon">⌘</span>运单</button>
+          <button class="nav-item child"><span class="nav-icon">⌘</span>运单报价</button>
+          <button class="nav-item"><span class="nav-icon">⌘</span>扣货管理</button>
+          <button class="nav-item collapsible"><span class="nav-icon">⌘</span>客服运单管理<span class="chevron">⌄</span></button>
+          <button class="nav-item collapsible"><span class="nav-icon">⌘</span>海外中转单<span class="chevron">⌄</span></button>
+          <button class="nav-item collapsible"><span class="nav-icon">⌘</span>财务运单<span class="chevron">⌄</span></button>
+          <button class="nav-item"><span class="nav-icon">⌘</span>报价审批</button>
+          <button class="nav-item"><span class="nav-icon">⌘</span>来款登记</button>
+          <button class="nav-item"><span class="nav-icon">⌘</span>出仓单</button>
+          <button class="nav-item"><span class="nav-icon">⌘</span>客户余额</button>
+          <button class="nav-item collapsible"><span class="nav-icon">⌘</span>工单<span class="chevron">⌄</span></button>
+          <button class="nav-item collapsible"><span class="nav-icon">⌘</span>服务订单<span class="chevron">⌄</span></button>
+          <button class="nav-item"><span class="nav-icon">⌘</span>修改材积运单</button>
+          <button class="nav-item"><span class="nav-icon">⌘</span>仓库费用日志</button>
+          <button class="nav-item collapsible"><span class="nav-icon">⌘</span>货件管理<span class="chevron">⌄</span></button>
+          <button class="nav-item"><span class="nav-icon">⌘</span>预留仓</button>
+        </nav>
+        <button class="collapse-btn" aria-label="收起侧边栏">‹</button>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="module-tabs">
+            <button class="module active">运单管理</button>
+            <button class="module">财务管理</button>
+            <button class="module">管理中心</button>
+            <button class="module">配置中心</button>
+            <button class="module">导出中心</button>
+            <button class="module">报表中心</button>
+            <button class="module">审批管理</button>
+          </div>
+          <div class="user-actions">
+            <button class="direct-btn">直客录单</button>
+            <button class="bell" aria-label="通知"><span>1</span></button>
+            <div class="avatar">天</div>
+            <span class="username">天朗</span>
+          </div>
+        </header>
+
+        <div class="tabbar">
+          <button class="hamburger" aria-label="菜单">☰</button>
+          <button class="back" aria-label="返回">‹</button>
+          <button class="page-tab">预报下单 <span>×</span></button>
+          <button class="page-tab">预留仓 <span>×</span></button>
+          <button class="page-tab active">运单 <span>×</span></button>
+          <button class="more-tab" aria-label="更多">›</button>
+        </div>
+
+        <section class="filter-card">
+          <form id="filterForm" class="filter-grid">
+            <label>关键字<input id="keywordInput" type="text" placeholder="支持批量(空格/逗号隔开)" /></label>
+            <label>品名<input id="productNameInput" type="text" placeholder="全模糊，空格为AND" /></label>
+            <label>客户简称<input type="text" placeholder="客户简称" /></label>
+            <label>仓库代码<input type="text" placeholder="仓库代码" /></label>
+            <label>邮编<input type="text" placeholder="邮编" /></label>
+            <label>跟单员<input type="text" placeholder="跟单员" /></label>
+
+            <label>标签<input type="text" placeholder="标签" /></label>
+            <label>运单号<input type="text" placeholder="支持批量(空格/逗号隔开)" /></label>
+            <label>制作发票<select><option>制作发票</option></select></label>
+            <label>目的地<input type="text" placeholder="目的地" /></label>
+            <label>未标签<select><option>未标签</option></select></label>
+            <label>交税方式<input type="text" placeholder="交税方式" /></label>
+            <label>经营单位<input type="text" placeholder="经营单位" /></label>
+
+            <label>转单号<input type="text" placeholder="支持批量(空格/逗号隔开)" /></label>
+            <label>报关方式<select><option>报关方式</option></select></label>
+            <label>客户备注<input type="text" placeholder="客户备注" /></label>
+            <label>仓库属性<input type="text" placeholder="仓库属性" /></label>
+            <label>下单时间<span class="date-range"><input type="text" placeholder="开始日期" /><span>→</span><input type="text" placeholder="结束日期" /></span></label>
+            <label>拣货时间<span class="date-range"><input type="text" placeholder="开始日期" /><span>→</span><input type="text" placeholder="结束日期" /></span></label>
+
+            <label>FBA单号<input type="text" placeholder="支持批量(空格/逗号隔开)" /></label>
+            <label>渠道<input type="text" placeholder="渠道" /></label>
+            <label>内部备注<input type="text" placeholder="内部备注" /></label>
+            <label>出仓时间<span class="date-range"><input type="text" placeholder="开始日期" /><span>→</span><input type="text" placeholder="结束日期" /></span></label>
+            <label>拣货仓库<input type="text" placeholder="拣货仓库" /></label>
+            <label>业务员<input type="text" placeholder="业务员" /></label>
+
+            <label>客服<input type="text" placeholder="客服" /></label>
+            <label>运单类型<input type="text" placeholder="运单类型" /></label>
+            <label>有无退运保<select><option>有无退运保</option></select></label>
+            <label>有无报关资料<select><option>有无报关资料</option></select></label>
+            <label>国内查验室<select><option>国内查验室</option></select></label>
+          </form>
+          <div class="filter-actions">
+            <button id="searchBtn" class="primary">搜索</button>
+            <button id="resetBtn">重置</button>
+            <button id="foldBtn">收起</button>
+          </div>
+          <div class="assistant-bot" aria-hidden="true">
+            <div class="bot-head"><span></span><span></span></div>
+            <div class="bot-body"></div>
+          </div>
+        </section>
+
+        <section class="table-card">
+          <div class="status-tabs" id="statusTabs">
+            <button class="active" data-status="入仓">入仓(27)</button>
+            <button data-status="出库">出库(11)</button>
+            <button data-status="出仓">出仓(231)</button>
+            <button data-status="运输">运输(26448)</button>
+            <button data-status="签收">签收(347492)</button>
+            <button data-status="扣货">扣货(0)</button>
+            <button data-status="取消">取消(20769)</button>
+            <button data-status="全部">全部(374209)</button>
+          </div>
+
+          <div class="toolbar">
+            <div class="toolbar-left">
+              <button>批量操作⌄</button>
+              <button>批量修改客户备注</button>
+              <button>批量修改内部备注</button>
+              <button>制作发票</button>
+              <button>更新运踪</button>
+              <button>发起问题件</button>
+              <button>创建工单</button>
+              <button>查看统计</button>
+              <button>导出⌄</button>
+              <button>箱标管理⌄</button>
+            </div>
+            <button class="settings" aria-label="表格设置">⚙</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="idx">#</th>
+                  <th class="check"><input id="selectAll" type="checkbox" /></th>
+                  <th>客户简称↕</th>
+                  <th>FBA单号</th>
+                  <th>运单号</th>
+                  <th>目的地↕</th>
+                  <th>报关方式</th>
+                  <th>ETA</th>
+                  <th>品名</th>
+                  <th>ETD</th>
+                  <th>船名航次</th>
+                  <th>申报总值</th>
+                  <th>附件个数</th>
+                  <th>问题类型</th>
+                  <th>快递公司</th>
+                  <th>渠道↕</th>
+                  <th>运单状态</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="waybillBody"></tbody>
+            </table>
+          </div>
+
+          <footer class="pager">
+            <span id="resultCount">共 27 条</span>
+            <button>‹</button>
+            <button class="page-current">1</button>
+            <button>›</button>
+            <select aria-label="每页条数"><option>50 条/页</option><option>100 条/页</option></select>
+          </footer>
+        </section>
+      </main>
+
+      <div class="float-tools" aria-hidden="true">
+        <span>⌘</span>
+        <span>译</span>
+      </div>
+      <button class="support" aria-label="客服">◎</button>
+      <div id="toast" class="toast" role="status"></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
